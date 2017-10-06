@@ -1,4 +1,5 @@
 # omnipay-verifone-web-service
+**Forked from digitickets/omnipay-verifone-web-service in order to add extra functionality**
 
 **Verifone Web Service driver for the Omnipay PHP payment processing library**
 

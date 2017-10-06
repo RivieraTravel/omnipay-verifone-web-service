@@ -118,12 +118,12 @@ xmlns="VANGUARD"
             throw new InvalidTxTypeException(__CLASS__);
         }
 
-        return $this->setParameter('processingIdentifier', $value);
+        return $this->setParameter('txntype', $value);
     }
 
     public function getTxntype()
     {
-        return '01';
+        return $this->getParameter('txntype');
     }
 
     public function getApacsterminalcapabilities()

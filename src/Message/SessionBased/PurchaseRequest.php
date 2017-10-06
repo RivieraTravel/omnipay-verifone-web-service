@@ -5,9 +5,22 @@ namespace DigiTickets\VerifoneWebService\Message\SessionBased;
 use DigiTickets\VerifoneWebService\Message\AbstractRemoteRequest;
 use DigiTickets\VerifoneWebService\Message\AbstractRemoteResponse;
 use Omnipay\Common\Message\RequestInterface;
+use DigiTickets\VerifoneWebService\Exceptions\InvalidProcessingIdentifierException;
+use DigiTickets\VerifoneWebService\Exceptions\InvalidTxTypeException;
 
 class PurchaseRequest extends AbstractRemoteRequest
 {
+    const TX_PURCHASE              = 1;
+    const TX_REFUND                = 2;
+    const TX_CASH_ADVANCE          = 4;
+    const TX_PWCB                  = 5;
+    const TX_CONTINUOUS_AUTHORITY  = 6;
+    const TX_ACCOUNT_CHECK         = 7;
+
+    const PI_AUTH_CHARGE    = 1;
+    const PI_AUTH           = 2;
+    const PI_CHARGE         = 3;
+
     /**
      * @return string
      */
@@ -90,6 +103,24 @@ xmlns="VANGUARD"
         return $this->getParameter('accountPasscode');
     }
 
+    public function setTxntype($value = self::TX_PURCHASE)
+    {
+        $validValues = [
+            self::TX_PURCHASE,
+            self::TX_REFUND,
+            self::TX_CASH_ADVANCE,
+            self::TX_PWCB,
+            self::TX_CONTINUOUS_AUTHORITY,
+            self::TX_ACCOUNT_CHECK,
+        ];
+
+        if (!in_array($value, $validValues)) {
+            throw new InvalidTxTypeException(__CLASS__);
+        }
+
+        return $this->setParameter('processingIdentifier', $value);
+    }
+
     public function getTxntype()
     {
         return '01';
@@ -105,9 +136,24 @@ xmlns="VANGUARD"
         return '12';
     }
 
+    public function setProcessingidentifier($value = self::PI_AUTH_CHARGE)
+    {
+        $validValues = [
+            self::PI_AUTH_CHARGE,
+            self::PI_AUTH,
+            self::PI_CHARGE,
+        ];
+
+        if (!in_array($value, $validValues)) {
+            throw new InvalidProcessingIdentifierException(__CLASS__);
+        }
+
+        return $this->setParameter('processingIdentifier', $value);
+    }
+
     public function getProcessingidentifier()
     {
-        return '1';
+        return $this->getParameter('processingIdentifier');
     }
 
     public function getReturnhash()

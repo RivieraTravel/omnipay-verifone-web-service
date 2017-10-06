@@ -1,5 +1,5 @@
 {
-  "name": "digitickets/omnipay-verifone-web-service",
+  "name": "autumndev/omnipay-verifone-web-service",
   "type": "library",
   "description": "Verifone (Ocius) Web Service driver for the Omnipay payment processing library",
   "keywords": [
@@ -17,6 +17,11 @@
   "homepage": "https://github.com/digitickets/omnipay-verifone-web-service",
   "license": "MIT",
   "authors": [
+    {
+      "name": "Scott-David Jones",
+      "email": "sayhi@autumndev.co.uk",
+      "role": "Developer"
+    },
     {
       "name": "Glenn Jenkins",
       "email": "pedanticantic@gmail.com",

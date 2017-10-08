@@ -1,8 +1,8 @@
 <?php
 
-namespace DigiTickets\VerifoneWebService\Message\NonSessionBased;
+namespace Autumndev\VerifoneWebService\Message\NonSessionBased;
 
-use DigiTickets\VerifoneWebService\Message\AbstractRemoteRequest;
+use Autumndev\VerifoneWebService\Message\AbstractRemoteRequest;
 
 abstract class AbstractTransactionRequest extends AbstractRemoteRequest
 {

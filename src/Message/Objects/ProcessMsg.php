@@ -1,8 +1,8 @@
 <?php
 
-namespace DigiTickets\VerifoneWebService\Message\Objects;
+namespace Autumndev\VerifoneWebService\Message\Objects;
 
-use DigiTickets\VerifoneWebService\Message\Objects\ProcessMsg\Message;
+use Autumndev\VerifoneWebService\Message\Objects\ProcessMsg\Message;
 
 class ProcessMsg
 {

@@ -1,8 +1,8 @@
 <?php
 
-namespace DigiTickets\VerifoneWebService\Exceptions;
+namespace Autumndev\VerifoneWebService\Exceptions;
 
-use DigiTickets\VerifoneWebService\Exceptions\BaseException;
+use Autumndev\VerifoneWebService\Exceptions\BaseException;
 
 use \Exception;
 

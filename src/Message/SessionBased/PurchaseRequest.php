@@ -1,12 +1,12 @@
 <?php
 
-namespace DigiTickets\VerifoneWebService\Message\SessionBased;
+namespace Autumndev\VerifoneWebService\Message\SessionBased;
 
-use DigiTickets\VerifoneWebService\Message\AbstractRemoteRequest;
-use DigiTickets\VerifoneWebService\Message\AbstractRemoteResponse;
+use Autumndev\VerifoneWebService\Message\AbstractRemoteRequest;
+use Autumndev\VerifoneWebService\Message\AbstractRemoteResponse;
 use Omnipay\Common\Message\RequestInterface;
-use DigiTickets\VerifoneWebService\Exceptions\InvalidProcessingIdentifierException;
-use DigiTickets\VerifoneWebService\Exceptions\InvalidTxTypeException;
+use Autumndev\VerifoneWebService\Exceptions\InvalidProcessingIdentifierException;
+use Autumndev\VerifoneWebService\Exceptions\InvalidTxTypeException;
 
 class PurchaseRequest extends AbstractRemoteRequest
 {

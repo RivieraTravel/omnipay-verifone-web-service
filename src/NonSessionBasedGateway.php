@@ -1,13 +1,13 @@
 <?php
 
-namespace DigiTickets\VerifoneWebService;
+namespace Autumndev\VerifoneWebService;
 
 class NonSessionBasedGateway extends AbstractVerifoneGateway
 {
     public function tokenRegistration(array $parameters = array())
     {
         return $this->createRequest(
-            '\DigiTickets\VerifoneWebService\Message\NonSessionBased\TokenRegistrationRequest',
+            '\Autumndev\VerifoneWebService\Message\NonSessionBased\TokenRegistrationRequest',
             $parameters
         );
     }
@@ -18,7 +18,7 @@ class NonSessionBasedGateway extends AbstractVerifoneGateway
         $parameters['confirmRequest'] = $this->confirm($parameters);
         $parameters['rejectRequest'] = $this->reject($parameters);
         return $this->createRequest(
-            '\DigiTickets\VerifoneWebService\Message\NonSessionBased\PurchaseTransactionRequest',
+            '\Autumndev\VerifoneWebService\Message\NonSessionBased\PurchaseTransactionRequest',
             $parameters
         );
     }
@@ -26,7 +26,7 @@ class NonSessionBasedGateway extends AbstractVerifoneGateway
     public function confirm(array $parameters = array())
     {
         return $this->createRequest(
-            '\DigiTickets\VerifoneWebService\Message\NonSessionBased\ConfirmRequest',
+            '\Autumndev\VerifoneWebService\Message\NonSessionBased\ConfirmRequest',
             $parameters
         );
     }
@@ -34,7 +34,7 @@ class NonSessionBasedGateway extends AbstractVerifoneGateway
     public function reject(array $parameters = array())
     {
         return $this->createRequest(
-            '\DigiTickets\VerifoneWebService\Message\NonSessionBased\RejectRequest',
+            '\Autumndev\VerifoneWebService\Message\NonSessionBased\RejectRequest',
             $parameters
         );
     }
@@ -44,7 +44,7 @@ class NonSessionBasedGateway extends AbstractVerifoneGateway
         $parameters['confirmRequest'] = $this->confirm($parameters);
         $parameters['rejectRequest'] = $this->reject($parameters);
         return $this->createRequest(
-            '\DigiTickets\VerifoneWebService\Message\NonSessionBased\RefundTransactionRequest',
+            '\Autumndev\VerifoneWebService\Message\NonSessionBased\RefundTransactionRequest',
             $parameters
         );
     }
@@ -52,7 +52,7 @@ class NonSessionBasedGateway extends AbstractVerifoneGateway
     public function confirmRefundRequest(array $parameters = array())
     {
         return $this->createRequest(
-            '\DigiTickets\VerifoneWebService\Message\NonSessionBased\ConfirmRequest',
+            '\Autumndev\VerifoneWebService\Message\NonSessionBased\ConfirmRequest',
             $parameters
         );
     }
@@ -60,7 +60,7 @@ class NonSessionBasedGateway extends AbstractVerifoneGateway
     public function rejectRefundRequest(array $parameters = array())
     {
         return $this->createRequest(
-            '\DigiTickets\VerifoneWebService\Message\NonSessionBased\RejectRequest',
+            '\Autumndev\VerifoneWebService\Message\NonSessionBased\RejectRequest',
             $parameters
         );
     }

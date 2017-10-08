@@ -1,6 +1,6 @@
 <?php
 
-namespace DigiTickets\VerifoneWebService;
+namespace Autumndev\VerifoneWebService;
 
 use Omnipay\Common\AbstractGateway;
 

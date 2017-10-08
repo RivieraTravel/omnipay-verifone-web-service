@@ -1,10 +1,10 @@
 <?php
 
-namespace DigiTickets\VerifoneWebService\Message\NonSessionBased;
+namespace Autumndev\VerifoneWebService\Message\NonSessionBased;
 
-use DigiTickets\VerifoneWebService\Message\AbstractRemoteRequest;
-use DigiTickets\VerifoneWebService\Message\AbstractRemoteResponse;
-use DigiTickets\VerifoneWebService\Message\ConfirmResponse;
+use Autumndev\VerifoneWebService\Message\AbstractRemoteRequest;
+use Autumndev\VerifoneWebService\Message\AbstractRemoteResponse;
+use Autumndev\VerifoneWebService\Message\ConfirmResponse;
 use Omnipay\Common\Message\RequestInterface;
 
 class ConfirmRequest extends AbstractRemoteRequest

@@ -1,49 +1,50 @@
 {
-  "name": "autumndev/omnipay-verifone-web-service",
-  "type": "library",
-  "description": "Verifone (Ocius) Web Service driver for the Omnipay payment processing library",
-  "keywords": [
-    "verifone",
-    "ocius",
-    "commidea",
-    "gateway",
-    "merchant",
-    "omnipay",
-    "pay",
-    "payment",
-    "web",
-    "service"
-  ],
-  "homepage": "https://github.com/digitickets/omnipay-verifone-web-service",
-  "license": "MIT",
-  "authors": [
-    {
-      "name": "Scott-David Jones",
-      "email": "sayhi@autumndev.co.uk",
-      "role": "Developer"
+    "name": "autumndev/omnipay-verifone-web-service",
+    "type": "library",
+    "description": "Verifone (Ocius) Web Service driver for the Omnipay payment processing library",
+    "keywords": [
+        "verifone",
+        "ocius",
+        "commidea",
+        "gateway",
+        "merchant",
+        "omnipay",
+        "pay",
+        "payment",
+        "web",
+        "service"
+    ],
+    "homepage": "https://github.com/autumndev/omnipay-verifone-web-service",
+    "license": "MIT",
+    "authors": [{
+            "name": "Scott-David Jones",
+            "email": "sayhi@autumndev.co.uk",
+            "role": "Developer"
+        },
+        {
+            "name": "Glenn Jenkins",
+            "email": "pedanticantic@gmail.com",
+            "role": "Developer"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Autumndev\\VerifoneWebService\\": "src/"
+        }
     },
-    {
-      "name": "Glenn Jenkins",
-      "email": "pedanticantic@gmail.com",
-      "role": "Developer"
-    }
-  ],
-  "autoload": {
-    "psr-4": {
-      "DigiTickets\\VerifoneWebService\\": "src/"
-    }
-  },
-  "autoload-dev": {
-    "psr-4": {
-      "DigiTicketsTests\\VerifoneWebService\\": "tests/"
-    }
-  },
-  "require": {
-    "omnipay/common": "~2.0"
-  },
-  "require-dev": {
-    "omnipay/tests": "~2.0"
-  },
-  "minimum-stability": "dev",
-  "prefer-stable": true
+    "autoload-dev": {
+        "psr-4": {
+            "Autumndev\\VerifoneWebService\\": "tests/"
+        }
+    },
+    "require": {
+        "php": ">=5.6.0",
+        "omnipay/common": "~2.0",
+        "ext-soap": "*"
+    },
+    "require-dev": {
+        "omnipay/tests": "~2.0"
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
 }

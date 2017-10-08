@@ -21,7 +21,7 @@ to your `composer.json` file:
 ```json
 {
     "require": {
-        "digitickets/omnipay-verifone-web-service": "~1.0"
+        "autumndev/omnipay-verifone-web-service": "~1.0"
     }
 }
 ```

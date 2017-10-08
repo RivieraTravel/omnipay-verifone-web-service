@@ -1,6 +1,6 @@
 <?php
 
-namespace DigiTickets\VerifoneWebService;
+namespace Autumndev\VerifoneWebService;
 
 class SessionBasedGateway extends AbstractVerifoneGateway
 {
@@ -12,7 +12,7 @@ class SessionBasedGateway extends AbstractVerifoneGateway
     public function generateSession(array $parameters = array())
     {
         return $this->createRequest(
-            '\DigiTickets\VerifoneWebService\Message\SessionBased\GenerateSessionRequest',
+            '\Autumndev\VerifoneWebService\Message\SessionBased\GenerateSessionRequest',
             $parameters
         );
     }
@@ -20,7 +20,7 @@ class SessionBasedGateway extends AbstractVerifoneGateway
     public function getCardDetails(array $parameters = array())
     {
         return $this->createRequest(
-            '\DigiTickets\VerifoneWebService\Message\SessionBased\GetCardDetailsRequest',
+            '\Autumndev\VerifoneWebService\Message\SessionBased\GetCardDetailsRequest',
             $parameters
         );
     }
@@ -28,7 +28,7 @@ class SessionBasedGateway extends AbstractVerifoneGateway
     public function tokenRegistration(array $parameters = array())
     {
         return $this->createRequest(
-            '\DigiTickets\VerifoneWebService\Message\SessionBased\TokenRegistrationRequest',
+            '\Autumndev\VerifoneWebService\Message\SessionBased\TokenRegistrationRequest',
             $parameters
         );
     }
@@ -36,7 +36,15 @@ class SessionBasedGateway extends AbstractVerifoneGateway
     public function purchase(array $parameters = array())
     {
         return $this->createRequest(
-            '\DigiTickets\VerifoneWebService\Message\SessionBased\PurchaseRequest',
+            '\Autumndev\VerifoneWebService\Message\SessionBased\PurchaseRequest',
+            $parameters
+        );
+    }
+
+    public function authorize(array $parameters = array())
+    {
+        return $this->createRequest(
+            '\Autumndev\VerifoneWebService\Message\SessionBased\AuthorizeRequest',
             $parameters
         );
     }
@@ -44,7 +52,7 @@ class SessionBasedGateway extends AbstractVerifoneGateway
     public function confirm(array $parameters = array())
     {
         return $this->createRequest(
-            '\DigiTickets\VerifoneWebService\Message\SessionBased\ConfirmRequest',
+            '\Autumndev\VerifoneWebService\Message\SessionBased\ConfirmRequest',
             $parameters
         );
     }
@@ -52,7 +60,7 @@ class SessionBasedGateway extends AbstractVerifoneGateway
     public function reject(array $parameters = array())
     {
         return $this->createRequest(
-            '\DigiTickets\VerifoneWebService\Message\SessionBased\RejectRequest',
+            '\Autumndev\VerifoneWebService\Message\SessionBased\RejectRequest',
             $parameters
         );
     }
@@ -60,7 +68,7 @@ class SessionBasedGateway extends AbstractVerifoneGateway
     public function refund(array $parameters = array())
     {
         return $this->createRequest(
-            '\DigiTickets\VerifoneWebService\Message\NonSessionBased\RefundTransactionRequest',
+            '\Autumndev\VerifoneWebService\Message\NonSessionBased\RefundTransactionRequest',
             $parameters
         );
     }
@@ -68,7 +76,7 @@ class SessionBasedGateway extends AbstractVerifoneGateway
     public function confirmRefundRequest(array $parameters = array())
     {
         return $this->createRequest(
-            '\DigiTickets\VerifoneWebService\Message\NonSessionBased\ConfirmRequest',
+            '\Autumndev\VerifoneWebService\Message\NonSessionBased\ConfirmRequest',
             $parameters
         );
     }
@@ -76,7 +84,7 @@ class SessionBasedGateway extends AbstractVerifoneGateway
     public function rejectRefundRequest(array $parameters = array())
     {
         return $this->createRequest(
-            '\DigiTickets\VerifoneWebService\Message\NonSessionBased\RejectRequest',
+            '\Autumndev\VerifoneWebService\Message\NonSessionBased\RejectRequest',
             $parameters
         );
     }

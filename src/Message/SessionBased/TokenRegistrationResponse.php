@@ -1,8 +1,8 @@
 <?php
 
-namespace DigiTickets\VerifoneWebService\Message\SessionBased;
+namespace Autumndev\VerifoneWebService\Message\SessionBased;
 
-use DigiTickets\VerifoneWebService\Message\AbstractRemoteResponse;
+use Autumndev\VerifoneWebService\Message\AbstractRemoteResponse;
 
 class TokenRegistrationResponse extends AbstractRemoteResponse
 {

@@ -1,10 +1,10 @@
 <?php
 
-namespace DigiTickets\VerifoneWebService\Message;
+namespace Autumndev\VerifoneWebService\Message;
 
-use DigiTickets\VerifoneWebService\Message\Objects\ProcessMsg;
-use DigiTickets\VerifoneWebService\Message\Objects\ProcessMsg\Message;
-use DigiTickets\VerifoneWebService\Message\Objects\ProcessMsg\Message\ClientHeader;
+use Autumndev\VerifoneWebService\Message\Objects\ProcessMsg;
+use Autumndev\VerifoneWebService\Message\Objects\ProcessMsg\Message;
+use Autumndev\VerifoneWebService\Message\Objects\ProcessMsg\Message\ClientHeader;
 use Omnipay\Common\Message\AbstractResponse;
 use Omnipay\Common\Message\RequestInterface;
 

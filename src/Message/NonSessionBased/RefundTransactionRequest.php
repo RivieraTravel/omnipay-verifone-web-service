@@ -1,8 +1,8 @@
 <?php
 
-namespace DigiTickets\VerifoneWebService\Message\NonSessionBased;
+namespace Autumndev\VerifoneWebService\Message\NonSessionBased;
 
-use DigiTickets\VerifoneWebService\Message\AbstractRemoteResponse;
+use Autumndev\VerifoneWebService\Message\AbstractRemoteResponse;
 use Omnipay\Common\Message\RequestInterface;
 
 class RefundTransactionRequest extends AbstractTransactionRequest

@@ -1,9 +1,9 @@
 <?php
 
-namespace DigiTickets\VerifoneWebService\Message\NonSessionBased;
+namespace Autumndev\VerifoneWebService\Message\NonSessionBased;
 
-use DigiTickets\VerifoneWebService\Message\AbstractRemoteResponse;
-use DigiTickets\VerifoneWebService\Message\Objects\ProcessMsg\Message;
+use Autumndev\VerifoneWebService\Message\AbstractRemoteResponse;
+use Autumndev\VerifoneWebService\Message\Objects\ProcessMsg\Message;
 
 class RefundResponse extends AbstractRemoteResponse
 {

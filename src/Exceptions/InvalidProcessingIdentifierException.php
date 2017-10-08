@@ -18,6 +18,6 @@ class InvalidProcessingIdentifierException extends BaseException {
      */
     public function __construct($class) {
         // make sure everything is assigned properly
-        parent::__construct($apiMessage.': Invalid Process Identifier provided.');
+        parent::__construct($class.': Invalid Process Identifier provided.');
     }
 }

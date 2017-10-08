@@ -7,6 +7,7 @@ use Autumndev\VerifoneWebService\Message\Objects\ProcessMsg\Message;
 use Autumndev\VerifoneWebService\Message\Objects\ProcessMsg\Message\ClientHeader;
 use Omnipay\Common\Message\AbstractRequest;
 use Omnipay\Common\Message\RequestInterface;
+use Autumndev\VerifoneWebService\Exceptions\UnexpectedValueException;
 
 /**
  * Verifone Web Service Purchase Request
@@ -16,8 +17,11 @@ abstract class AbstractRemoteRequest extends AbstractRequest
     protected $liveEndpoint = 'https://payment.cxmlpg.com/XML4/commideagateway.asmx';
     protected $testEndpoint = 'https://txn-cst.cxmlpg.com/XML4/commideagateway.asmx';
 
-    protected function getEndpoint(bool $withWsdl = false)
+    protected function getEndpoint($withWsdl = false)
     {
+        if (!is_bool($withWsdl)) {
+            throw new UnexpectedValueException(__CLASS__);
+        }
         return ($this->getTestMode() ? $this->testEndpoint : $this->liveEndpoint) . ($withWsdl ? '?WSDL' : '');
     }
 

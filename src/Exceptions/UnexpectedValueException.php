@@ -6,7 +6,7 @@ use Autumndev\VerifoneWebService\Exceptions\BaseException;
 
 use \Exception;
 
-class InvalidTxTypeException extends BaseException {
+class UnexpectedValueException extends BaseException {
     /**
      * constructor
      *
@@ -18,6 +18,6 @@ class InvalidTxTypeException extends BaseException {
      */
     public function __construct($class) {
         // make sure everything is assigned properly
-        parent::__construct($class.': Invalid TX Type provided.');
+        parent::__construct($class.': Invalid value passed.');
     }
 }

@@ -126,6 +126,16 @@ abstract class AbstractRemoteResponse extends AbstractResponse
         return $this->data->getMsgDataAttribute('sessionpasscode');
     }
 
+    public function getErrorCode()
+    {
+        return $this->data->getMsgDataAttribute('errorcode');
+    }
+
+    public function getErrorMessage()
+    {
+        return $this->data->getMsgDataAttribute('errormessage');
+    }
+
     public function getProcessingDb()
     {
         return $this->data->getProcessingDb();

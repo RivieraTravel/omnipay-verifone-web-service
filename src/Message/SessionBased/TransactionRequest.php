@@ -8,7 +8,7 @@ use Omnipay\Common\Message\RequestInterface;
 use Autumndev\VerifoneWebService\Exceptions\InvalidProcessingIdentifierException;
 use Autumndev\VerifoneWebService\Exceptions\InvalidTxTypeException;
 
-class PurchaseRequest extends AbstractRemoteRequest
+class TransactionRequest extends AbstractRemoteRequest
 {
     const TX_PURCHASE              = 1;
     const TX_REFUND                = 2;

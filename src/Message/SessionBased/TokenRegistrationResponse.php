@@ -20,4 +20,14 @@ class TokenRegistrationResponse extends AbstractRemoteResponse
     {
         return $this->data->getMsgDataAttribute('tokenid');
     }
+
+    public function getMerchantReference()
+    {
+        return $this->data->getMsgDataAttribute('merchantreference');
+    }
+
+    public function getCardSchemeReference()
+    {
+        return $this->data->getMsgDataAttribute('cardschemename');
+    }
 }

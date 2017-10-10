@@ -4,7 +4,7 @@ namespace Autumndev\VerifoneWebService\Message\SessionBased;
 
 use Autumndev\VerifoneWebService\Message\AbstractRemoteResponse;
 
-class PurchaseResponse extends AbstractRemoteResponse
+class TransactionResponse extends AbstractRemoteResponse
 {
     protected $tokenId;
 

@@ -64,7 +64,7 @@ xmlns="VANGUARD"
      */
     protected function buildResponse($request, $response)
     {
-        return new PurchaseResponse($request, $response);
+        return new TransactionResponse($request, $response);
     }
 
     public function setHouse($value)

@@ -33,18 +33,10 @@ class SessionBasedGateway extends AbstractVerifoneGateway
         );
     }
 
-    public function purchase(array $parameters = array())
+    public function transaction(array $parameters = array())
     {
         return $this->createRequest(
-            '\Autumndev\VerifoneWebService\Message\SessionBased\PurchaseRequest',
-            $parameters
-        );
-    }
-
-    public function authorize(array $parameters = array())
-    {
-        return $this->createRequest(
-            '\Autumndev\VerifoneWebService\Message\SessionBased\AuthorizeRequest',
+            '\Autumndev\VerifoneWebService\Message\SessionBased\TransactionRequest',
             $parameters
         );
     }

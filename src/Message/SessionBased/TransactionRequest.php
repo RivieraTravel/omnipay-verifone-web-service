@@ -51,7 +51,7 @@ xmlns="VANGUARD"
 <avshouse>'.$this->getHouse().'</avshouse>
 <avspostcode>'.str_replace(' ', '', $this->getPostcodeDigits()).'</avspostcode>
 <txnvalue>'.$this->getAmount().'</txnvalue>
-<terminalcountrycode>'.$this->getCurrencyNumeric().'</terminalcountrycode>
+<terminalcountrycode>'.$this->getTerminalCountryCode().'</terminalcountrycode>
 <accountpasscode>'.$this->getAccountPasscode().'</accountpasscode>
 <returnhash>'.$this->getReturnhash().'</returnhash>
 </vgtransactionrequest>';
@@ -128,12 +128,22 @@ xmlns="VANGUARD"
 
     public function getApacsterminalcapabilities()
     {
-        return '4298';
+        return $this->getParameter('apacsterminalcapabilities');
+    }
+
+    public function setApacsterminalcapabilities($value = '4298')
+    {
+        return $this->setParameter('apacsterminalcapabilities', $value);
     }
 
     public function getCapturemethod()
     {
         return '12';
+    }
+
+    public function setCapturemethod($value = '12')
+    {
+        return $this->setParameter('capturemethod', $value);
     }
 
     public function setProcessingidentifier($value = self::PI_AUTH_CHARGE)
@@ -148,16 +158,24 @@ xmlns="VANGUARD"
             throw new InvalidProcessingIdentifierException(__CLASS__);
         }
 
-        return $this->setParameter('processingIdentifier', $value);
+        return $this->setParameter('processingidentifier', $value);
     }
 
     public function getProcessingidentifier()
     {
-        return $this->getParameter('processingIdentifier');
+        return $this->getParameter('processingidentifier');
     }
 
     public function getReturnhash()
     {
         return '0';
+    }
+
+    public function getTerminalCountryCode() {
+        return $this->getParameter('terminalcountrycode');
+    }
+
+    public function setTerminalCountryCode($value) {
+        return $this->setParameter('terminalcountrycode', $value);
     }
 }

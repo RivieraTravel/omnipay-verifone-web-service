@@ -46,8 +46,87 @@ class TransactionResponse extends AbstractRemoteResponse
         $this->tokenId = $value;
     }
 
-    protected function getTokenId()
+    public function getTokenId()
     {
         return (string) $this->tokenId;
+    }
+
+    public function getMerchantReference()
+    {
+        return $this->data->getMsgDataAttribute('merchantreference')
+    }
+
+    public function getResultDateTimeString()
+    {
+        return $this->data->getMsgDataAttribute('resultdatetimestring')
+    }
+
+    public function getMerchantNumber()
+    {
+        return $this->data->getMsgDataAttribute('merchantnumber')
+    }
+
+    public function getTerminalId()
+    {
+        return $this->data->getMsgDataAttribute('tid')
+    }
+
+    public function getSchemeName() {
+        return $this->data->getMsgDataAttribute('schemename');
+    }
+
+    public function getMessageNumber()
+    {
+        return $this->data->getMsgDataAttribute('messagenumber')
+    }
+
+    public function getVrTelephone()
+    {
+        return $this->data->getMsgDataAttribute('vrtel')
+    }
+
+    public function getTxnResult()
+    {
+        return $this->data->getMsgDataAttribute('txnresult')
+    }
+
+    public function getTerminalId()
+    {
+        return $this->data->getMsgDataAttribute('tid')
+    }
+
+    public function getPcavsResult() {
+        return $this->data->getMsgDataAttribute('pcavsresult');
+    }
+
+    public function getAd1avsresult()
+    {
+        return $this->data->getMsgDataAttribute('ad1avsresult')
+    }
+
+    public function getCvcResult()
+    {
+        return $this->data->getMsgDataAttribute('cvcresult')
+    }
+
+    public function getArc() {
+        return $this->data->getMsgDataAttribute('arc');
+    }
+
+    public function getAuthorSignentity() {
+        return $this->data->getMsgDataAttribute('authorisingentity');
+    }
+
+    public function getVgisReference() {
+        return $this->data->getMsgDataAttribute('vgisreference');
+    }
+    public function getCustomerSpecificHash() {
+        return $this->data->getMsgDataAttribute('customerspecifichash');
+    }
+    public function getPanStar() {
+        return $this->data->getMsgDataAttribute('panstar');
+    }
+    public function gethash() {
+        return $this->data->getMsgDataAttribute('gdethash');
     }
 }

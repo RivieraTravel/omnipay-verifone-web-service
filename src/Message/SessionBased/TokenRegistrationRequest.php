@@ -29,7 +29,7 @@ xmlns="VANGUARD"
 >
 <sessionguid>'.$this->getSessionGuid().'</sessionguid>
 <merchantreference>'.$this->getTransactionId().'</merchantreference>
-<expirydate>'.$this->getExpiryDateYYMM().'</expirydate>
+<expirydate>'.$this->getExpiryDate().'</expirydate>
 <startdate />
 <issueno />
 <purchase>'.$this->getPurchase().'</purchase>
@@ -49,14 +49,14 @@ xmlns="VANGUARD"
         return new TokenRegistrationResponse($request, $response);
     }
 
-    public function setExpiryDateYYMM($value)
+    public function setExpiryDate($value)
     {
-        return $this->setParameter('expiryDateYYMM', $value);
+        return $this->setParameter('expirydate', $value);
     }
 
-    public function getExpiryDateYYMM()
+    public function getExpiryDate()
     {
-        return $this->getParameter('expiryDateYYMM');
+        return $this->getParameter('expiryDate');
     }
 
     public function getPurchase()

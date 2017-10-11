@@ -90,11 +90,6 @@ class TransactionResponse extends AbstractRemoteResponse
         return $this->data->getMsgDataAttribute('txnresult')
     }
 
-    public function getTerminalId()
-    {
-        return $this->data->getMsgDataAttribute('tid')
-    }
-
     public function getPcavsResult() {
         return $this->data->getMsgDataAttribute('pcavsresult');
     }

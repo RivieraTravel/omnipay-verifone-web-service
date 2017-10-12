@@ -68,6 +68,25 @@ or\
 For general Omnipay usage instructions, please see the main [Omnipay](https://github.com/omnipay/omnipay)
 repository.
 
+**Example Send Request**
+```php
+//build and config gateway
+$gateway = Omnipay::create(
+    '\Autumndev\VerifoneWebService\SessionBasedGateway'
+);
+$gateway->setTestMode(true);
+$gateway->setPasscode($passcode);
+$gateway->setSystemGuid($guid);
+$gateway->setSystemId($systemId);
+//build and configure request
+$session = $gateway->generateSession([
+    'returnurl' => 'SOME URL',
+    'fullcapture' => true
+]);
+//send request, recieve response.
+$response = $session->send();
+```
+
 ## Support
 
 If you are having general issues with Omnipay, we suggest posting on

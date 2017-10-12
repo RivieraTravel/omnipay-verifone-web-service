@@ -30,8 +30,8 @@ xmlns="VANGUARD"
 <sessionguid>'.$this->getSessionGuid().'</sessionguid>
 <merchantreference>'.$this->getTransactionId().'</merchantreference>
 <expirydate>'.$this->getExpiryDate().'</expirydate>
-<startdate />
-<issueno />
+<startdate>'.$this->getStartDate().'</startdate>
+<issueno>'.$this->getIssueNumber().'</issueno>
 <purchase>'.$this->getPurchase().'</purchase>
 <refund>'.$this->getRefund().'</refund>
 <cashback>'.$this->getCashback().'</cashback>
@@ -56,30 +56,66 @@ xmlns="VANGUARD"
 
     public function getExpiryDate()
     {
-        return $this->getParameter('expiryDate');
+        return $this->getParameter('expirydate');
+    }
+
+    public function setStartDate($value)
+    {
+        return $this->setParameter('startdate', $value);
+    }
+
+    public function getStartDate()
+    {
+        return $this->getParameter('startdate');
+    }
+
+    public function setIssueNumber($value)
+    {
+        return $this->setParameter('issuenumber', $value);
+    }
+
+    public function getIssueNumber()
+    {
+        return $this->getParameter('issuenumber');
+    }
+
+    public function setPurchase($value)
+    {
+        return $this->setParameter('purchase', $value);
     }
 
     public function getPurchase()
     {
-        return 'true';
+        return $this->getParameter('purchase');
+    }
+
+    public function setRefund($value)
+    {
+        return $this->setParameter('refund', $value);
     }
 
     public function getRefund()
     {
-        return 'true';
+        return $this->getParameter('refund');
+    }
+
+    public function setCashback($value)
+    {
+        return $this->setParameter('cashback', $value);
     }
 
     public function getCashback()
     {
-        return 'false';
+        return $this->getParameter('cashback');
+    }
+
+    public function setTokenexpirationdate($value)
+    {
+        return $this->setParameter('tokenexpirationdate', $value);
     }
 
     public function getTokenexpirationdate()
     {
-        // The default lifetime for a token is a fairly arbitrary 2 years.
-        $today = new \DateTime();
-        $twoYearsHence = $today->add(new \DateInterval('P2Y'))->format('dmY');
-
-        return $twoYearsHence;
+        return $this->getParameter('tokenexpirationdate');
     }
 }

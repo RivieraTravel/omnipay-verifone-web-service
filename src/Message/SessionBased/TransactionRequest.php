@@ -44,7 +44,7 @@ xmlns="VANGUARD"
 <merchantreference>'.$this->getTransactionId().'</merchantreference>
 <accountid>'.$this->getAccountId().'</accountid>
 <txntype>'.$this->getTxntype().'</txntype>
-<transactioncurrencycode>'.$this->getCurrencyNumeric().'</transactioncurrencycode>
+<transactioncurrencycode>'.$this->getTransactionCurrencyCode().'</transactioncurrencycode>
 <apacsterminalcapabilities>'.$this->getApacsterminalcapabilities().'</apacsterminalcapabilities>
 <capturemethod>'.$this->getCapturemethod().'</capturemethod>
 <processingidentifier>'.$this->getProcessingidentifier().'</processingidentifier>
@@ -177,5 +177,13 @@ xmlns="VANGUARD"
 
     public function setTerminalCountryCode($value) {
         return $this->setParameter('terminalcountrycode', $value);
+    }
+
+    public function getTransactionCurrencyCode() {
+        return $this->getParameter('transactioncurrencycode');
+    }
+
+    public function setTransactionCurrencyCode($value) {
+        return $this->setParameter('transactioncurrencycode', $value);
     }
 }

@@ -53,22 +53,22 @@ class TransactionResponse extends AbstractRemoteResponse
 
     public function getMerchantReference()
     {
-        return $this->data->getMsgDataAttribute('merchantreference')
+        return $this->data->getMsgDataAttribute('merchantreference');
     }
 
     public function getResultDateTimeString()
     {
-        return $this->data->getMsgDataAttribute('resultdatetimestring')
+        return $this->data->getMsgDataAttribute('resultdatetimestring');
     }
 
     public function getMerchantNumber()
     {
-        return $this->data->getMsgDataAttribute('merchantnumber')
+        return $this->data->getMsgDataAttribute('merchantnumber');
     }
 
     public function getTerminalId()
     {
-        return $this->data->getMsgDataAttribute('tid')
+        return $this->data->getMsgDataAttribute('tid');
     }
 
     public function getSchemeName() {
@@ -77,17 +77,17 @@ class TransactionResponse extends AbstractRemoteResponse
 
     public function getMessageNumber()
     {
-        return $this->data->getMsgDataAttribute('messagenumber')
+        return $this->data->getMsgDataAttribute('messagenumber');
     }
 
     public function getVrTelephone()
     {
-        return $this->data->getMsgDataAttribute('vrtel')
+        return $this->data->getMsgDataAttribute('vrtel');
     }
 
     public function getTxnResult()
     {
-        return $this->data->getMsgDataAttribute('txnresult')
+        return $this->data->getMsgDataAttribute('txnresult');
     }
 
     public function getPcavsResult() {
@@ -96,12 +96,12 @@ class TransactionResponse extends AbstractRemoteResponse
 
     public function getAd1avsresult()
     {
-        return $this->data->getMsgDataAttribute('ad1avsresult')
+        return $this->data->getMsgDataAttribute('ad1avsresult');
     }
 
     public function getCvcResult()
     {
-        return $this->data->getMsgDataAttribute('cvcresult')
+        return $this->data->getMsgDataAttribute('cvcresult');
     }
 
     public function getArc() {

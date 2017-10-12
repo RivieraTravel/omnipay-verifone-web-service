@@ -10,6 +10,7 @@ use Omnipay\Common\Message\RequestInterface;
 
 abstract class AbstractRemoteResponse extends AbstractResponse
 {
+    protected $rawResponse;
     /**
      * Constructor
      *
@@ -19,8 +20,12 @@ abstract class AbstractRemoteResponse extends AbstractResponse
     public function __construct(RequestInterface $request, $data)
     {
         parent::__construct($request, $data);
-
+        $this->rawResponse = $data;
         $this->data = $this->convertDataToProcessMsg();
+    }
+
+    public function getRawData() {
+        return json_encode($this->rawResponse);
     }
 
     /**

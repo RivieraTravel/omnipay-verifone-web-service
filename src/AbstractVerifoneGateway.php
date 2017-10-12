@@ -44,4 +44,14 @@ abstract class AbstractVerifoneGateway extends AbstractGateway
     {
         return $this->setParameter('passcode', $value);
     }
+
+    public function setProcessingDb($value)
+    {
+        return $this->setParameter('processingDb', $value);
+    }
+
+    public function getProcessingDb()
+    {
+        return $this->getParameter('processingDb');
+    }
 }

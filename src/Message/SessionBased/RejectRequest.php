@@ -53,4 +53,34 @@ xmlns="VANGUARD"
     {
         return $this->getParameter('capturemethod');
     }
+
+    public function setCsc($value)
+    {
+        return $this->setParameter('csc', $value);
+    }
+
+    public function getCsc()
+    {
+        return $this->getParameter('Csc');
+    }
+
+    public function setAvshouse($value)
+    {
+        return $this->setParameter('avshouse', $value);
+    }
+
+    public function getAvshouse()
+    {
+        return $this->getParameter('avshouse');
+    }
+
+    public function setAvspostcode($value)
+    {
+        return $this->setParameter('avspostcode', $value);
+    }
+
+    public function getAvspostcode()
+    {
+        return $this->getParameter('avspostcode');
+    }
 }

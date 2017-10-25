@@ -74,7 +74,7 @@ xmlns="VANGUARD"
 
     public function getHouse()
     {
-        return $this->getParameter('house');
+        return preg_replace('/[^\d]/', '', $this->getParameter('house'));
     }
 
     public function setPostcode($value)

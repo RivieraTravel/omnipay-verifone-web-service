@@ -79,4 +79,9 @@ class ConfirmResponse extends AbstractRemoteResponse
     public function getAuthorSignentity() {
         return $this->data->getMsgDataAttribute('authorisingentity');
     }
+
+    public function getTransactionId()
+    {
+        return $this->data->getMsgDataAttribute('transactionid');
+    }
 }

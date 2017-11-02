@@ -9,9 +9,20 @@ class ConfirmResponse extends AbstractRemoteResponse
      *
      * @return string
      */
-    public function getError()
+    public function getError(){
+        if (empty($this->getErrorCode())) {
+            return null;
+        }
+        return $this->getErrorCode().': '.$this->getErrorMessage();
+    }
+    public function getErrorCode()
     {
-        return null;
+        return $this->data->getMsgDataAttribute('CODE');
+    }
+
+    public function getErrorMsgText()
+    {
+        return $this->data->getMsgDataAttribute('MSGTXT');
     }
 
     public function getAuthCode()

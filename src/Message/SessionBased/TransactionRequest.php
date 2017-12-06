@@ -10,12 +10,12 @@ use Autumndev\VerifoneWebService\Exceptions\InvalidTxTypeException;
 
 class TransactionRequest extends AbstractRemoteRequest
 {
-    const TX_PURCHASE              = 1;
-    const TX_REFUND                = 2;
-    const TX_CASH_ADVANCE          = 4;
-    const TX_PWCB                  = 5;
-    const TX_CONTINUOUS_AUTHORITY  = 6;
-    const TX_ACCOUNT_CHECK         = 7;
+    const TX_PURCHASE              = '01';
+    const TX_REFUND                = '02';
+    const TX_CASH_ADVANCE          = '04';
+    const TX_PWCB                  = '05';
+    const TX_CONTINUOUS_AUTHORITY  = '06';
+    const TX_ACCOUNT_CHECK         = '07';
 
     const PI_AUTH_CHARGE    = 1;
     const PI_AUTH           = 2;

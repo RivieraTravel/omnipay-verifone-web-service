@@ -97,8 +97,7 @@ abstract class AbstractRemoteRequest extends AbstractRequest
                     $this->getPasscode(),
                     empty($this->getProcessingDb()) ? '' : $this->getProcessingDb(),
                     1,
-                    false,
-                    ''
+                    false
                 ),
                 $this->getMsgType(),
                 $this->getMsgData()

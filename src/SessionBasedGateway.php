@@ -25,6 +25,22 @@ class SessionBasedGateway extends AbstractVerifoneGateway
         );
     }
 
+    public function enrollmentCheck(array $parameters = array())
+    {
+        return $this->createRequest(
+            '\Autumndev\VerifoneWebService\Message\SessionBased\EnrollmentCheckRequest',
+            $parameters
+        );
+    }
+
+    public function autheticationCheck(array $parameters = array())
+    {
+        return $this->createRequest(
+            '\Autumndev\VerifoneWebService\Message\SessionBased\AutheticationCheckRequest',
+            $parameters
+        );
+    }
+
     public function tokenRegistration(array $parameters = array())
     {
         return $this->createRequest(

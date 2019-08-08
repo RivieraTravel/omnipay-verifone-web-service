@@ -21,6 +21,9 @@ class TransactionRequest extends AbstractRemoteRequest
     const PI_AUTH           = 2;
     const PI_CHARGE         = 3;
 
+
+    protected $hasPaAuxData = false;
+
     /**
      * @return string
      */
@@ -52,10 +55,31 @@ xmlns="VANGUARD"
 <avspostcode>'.str_replace(' ', '', $this->getPostcodeDigits()).'</avspostcode>
 <txnvalue>'.$this->getAmount().'</txnvalue>
 <terminalcountrycode>'.$this->getTerminalCountryCode().'</terminalcountrycode>
+'.$this->getPaAuxData().'
 <accountpasscode>'.$this->getAccountPasscode().'</accountpasscode>
 <returnhash>'.$this->getReturnhash().'</returnhash>
 </vgtransactionrequest>';
     }
+
+
+    protected function getPaAuxData()
+    {
+        //return '';
+
+
+        if ($this->hasPaAuxData()) {
+            return '<payerauthauxiliarydata>
+<authenticationstatus>'.$this->getAuthenticationStatus().'</authenticationstatus>
+<authenticationcavv>'.$this->getAuthenticationCAVV().'</authenticationcavv>
+<authenticationeci>'.$this->getAuthenticationECI().'</authenticationeci>
+<atsdata>'.$this->getAtsData().'</atsdata>
+<transactionid>'.$this->getPaTransactionId().'</transactionid>
+</payerauthauxiliarydata>';
+        } else {
+            return '';
+        }
+    }
+
 
     /**
      * @param RequestInterface $request
@@ -186,4 +210,54 @@ xmlns="VANGUARD"
     public function setTransactionCurrencyCode($value) {
         return $this->setParameter('transactioncurrencycode', $value);
     }
+
+
+    protected function hasPaAuxData() {
+        return $this->hasPaAuxData;
+    }
+    protected function setHasPaAuxData($value) {
+        return $this->hasPaAuxData = $value;
+    }
+
+    public function getAuthenticationStatus() {
+        return $this->getParameter('authenticationstatus');
+    }
+    public function setAuthenticationStatus($value) {
+        $this->setHasPaAuxData(true);
+        return $this->setParameter('authenticationstatus', $value);
+    }
+
+    public function getAuthenticationCAVV() {
+        return $this->getParameter('authenticationcavv');
+    }
+    public function setAuthenticationCAVV($value) {
+        $this->setHasPaAuxData(true);
+        return $this->setParameter('authenticationcavv', $value);
+    }
+
+    public function getAuthenticationECI() {
+        return $this->getParameter('authenticationeci');
+    }
+    public function setAuthenticationECI($value) {
+        $this->setHasPaAuxData(true);
+        return $this->setParameter('authenticationeci', $value);
+    }
+
+    public function getAtsData() {
+        return $this->getParameter('atsdata');
+    }
+    public function setAtsData($value) {
+        $this->setHasPaAuxData(true);
+        return $this->setParameter('atsdata', $value);
+    }
+
+    public function getPaTransactionId() {
+        return $this->getParameter('patransactionid');
+    }
+    public function setPaTransactionId($value) {
+        $this->setHasPaAuxData(true);
+        return $this->setParameter('patransactionid', $value);
+    }
+
+
 }
